@@ -1,0 +1,41 @@
+[System]
+Name='ProgettoFuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Frequenza_cardiaca'
+Range=[60 100]
+NumMFs=3
+MF1='Alta':'trimf',[80 90 100]
+MF2='Media':'trimf',[70 80 90]
+MF3='Bassa':'trimf',[60 70 80]
+
+[Input2]
+Name='Frequenza_Respiratoria'
+Range=[12 20]
+NumMFs=3
+MF1='Bassa':'trimf',[12 14 16]
+MF2='Media':'trimf',[14 16 18]
+MF3='Alta':'trimf',[16 18 20]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='Bugia_media':'trimf',[0.2 0.64192849404117 0.8]
+MF2='Bugia_bassa':'trimf',[0 0.000542 0.5]
+MF3='Bugia_Alta':'trimf',[0.501083423618635 1.07 2]
+
+[Rules]
+3 1, 2 (1) : 2
+3 0, 2 (1) : 2
+3 1, 2 (1) : 1
