@@ -1,0 +1,129 @@
+[System]
+Name='ProgettoFuzzy24-02-16-47'
+Type='mamdani'
+Version=2.0
+NumInputs=7
+NumOutputs=1
+NumRules=49
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='sum'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Frequenza_cardiaca'
+Range=[60 100]
+NumMFs=3
+MF1='Alta':'trimf',[74.3386243386243 100 100]
+MF2='Media':'trimf',[72.8677248677249 79.1677248677249 86.0677248677249]
+MF3='Bassa':'trimf',[60 60 85.026455026455]
+
+[Input2]
+Name='Frequenza_Respiratoria'
+Range=[12 20]
+NumMFs=3
+MF1='Bassa':'trimf',[12 12 16.9794149512459]
+MF2='Media':'trimf',[14.6 16 17.4561213434453]
+MF3='Alta':'trimf',[15.011917659805 20 20]
+
+[Input3]
+Name='Conduttanza_cutanea'
+Range=[0.5 2.5]
+NumMFs=3
+MF1='Bassa':'trimf',[0.5 0.5 1.71668472372698]
+MF2='Media':'trimf',[0.995 1.5 2.00054171180932]
+MF3='Alta':'trimf',[1.26814734561213 2.5 2.5]
+
+[Input4]
+Name='Movenze'
+Range=[0 1]
+NumMFs=3
+MF1='rilassate':'trimf',[0 0 0.6376]
+MF2='normali':'trimf',[0.25 0.5 0.7546]
+MF3='agitate':'trimf',[0.3602 1 1]
+
+[Input5]
+Name='Contatto_visivo'
+Range=[0 1]
+NumMFs=3
+MF1='Attento':'trimf',[0 0 0.6376]
+MF2='Distratto':'trimf',[0.25 0.5 0.7546]
+MF3='Sfuggente':'trimf',[0.36 1 1]
+
+[Input6]
+Name='Coerenza_nelle_risposte'
+Range=[0 1]
+NumMFs=3
+MF1='Media_coerenza':'trimf',[0.25 0.5 0.7546]
+MF2='Coerente':'trimf',[0 0 0.6376]
+MF3='Incoerente':'trimf',[0.36 1 1]
+
+[Input7]
+Name='Modo_di_parlare'
+Range=[0 1]
+NumMFs=3
+MF1='Velocemente':'trimf',[0 0 0.6376]
+MF2='Mediamente':'trimf',[0.25 0.5 0.7546]
+MF3='Lentamente':'trimf',[0.36 1 1]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=5
+MF1='Bugia_bassa':'trimf',[0 0 0.59967497291441]
+MF2='Bugia_Alta':'trimf',[0.399241603466956 0.998 0.998]
+MF3='Media':'trimf',[0.199 0.509750812567714 0.8]
+MF4='Medio_basso':'trimf',[0.00488 0.209 0.399241603466956]
+MF5='Medio_alta':'trimf',[0.6 0.8 1]
+
+[Rules]
+1 3 3 0 0 0 0, 2 (1) : 1
+3 1 1 0 0 0 0, 1 (1) : 1
+3 2 2 0 0 0 0, 4 (0.9) : 1
+2 1 2 0 0 0 0, 4 (0.9) : 1
+2 2 1 0 0 0 0, 4 (0.9) : 1
+1 3 2 0 0 0 0, 2 (1) : 1
+1 2 3 0 0 0 0, 2 (1) : 1
+2 1 1 0 0 0 0, 1 (1) : 1
+3 2 1 0 0 0 0, 1 (1) : 1
+3 1 2 0 0 0 0, 1 (1) : 1
+2 2 2 0 0 0 0, 3 (1) : 1
+2 3 3 0 0 0 0, 2 (1) : 1
+1 2 2 0 0 0 0, 5 (0.9) : 1
+2 3 2 0 0 0 0, 5 (0.9) : 1
+2 2 3 0 0 0 0, 5 (0.9) : 1
+0 0 0 1 1 2 2, 1 (0.5) : 2
+0 0 0 2 1 2 1, 1 (0.5) : 2
+0 0 0 1 2 2 1, 1 (0.5) : 2
+0 0 0 1 1 1 1, 1 (0.5) : 2
+0 0 0 1 1 1 2, 4 (0.4) : 2
+0 0 0 2 1 1 1, 4 (0.4) : 2
+0 0 0 2 2 2 1, 4 (0.4) : 2
+0 0 0 1 2 2 2, 4 (0.4) : 2
+0 0 0 1 2 1 1, 4 (0.4) : 2
+0 0 0 2 1 2 2, 4 (0.4) : 2
+0 0 0 1 2 1 2, 3 (0.5) : 2
+0 0 0 2 2 1 1, 3 (0.5) : 2
+0 0 0 2 1 1 2, 3 (0.5) : 2
+0 0 0 2 2 2 2, 3 (0.5) : 2
+2 3 3 0 0 0 0, 2 (1) : 1
+0 0 0 3 2 1 2, 3 (0.5) : 2
+0 0 0 2 3 1 2, 3 (0.5) : 2
+0 0 0 2 2 3 2, 3 (0.5) : 2
+0 0 0 2 2 1 3, 3 (0.5) : 2
+0 0 0 3 3 1 2, 5 (0.4) : 2
+0 0 0 2 3 3 2, 5 (0.4) : 2
+0 0 0 2 2 3 3, 5 (0.4) : 2
+0 0 0 3 2 1 3, 5 (0.4) : 2
+0 0 0 3 2 3 2, 5 (0.4) : 2
+0 0 0 2 3 1 3, 5 (0.4) : 2
+0 0 0 2 3 3 3, 2 (0.5) : 2
+0 0 0 3 2 3 3, 2 (0.5) : 2
+0 0 0 3 3 1 3, 2 (0.5) : 2
+0 0 0 3 3 3 2, 2 (0.5) : 2
+0 0 0 3 1 1 2, 1 (0.5) : 2
+0 0 0 1 3 1 2, 4 (0.4) : 2
+0 0 0 2 1 3 1, 3 (0.5) : 2
+0 0 0 1 3 3 2, 2 (0.5) : 2
+0 0 0 2 3 2 3, 5 (0.4) : 2
